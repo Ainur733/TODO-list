@@ -1,0 +1,186 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.todo {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.todo h1 {
+
+    margin-bottom: 5rem;
+}
+
+.todo .container-input {
+    display: flex;
+    gap: 30px;
+}
+
+.todo__add {
+    width: 30%;
+    border: 2px solid #cccccc;
+    position: relative;
+}
+
+.todo__add input {
+    width: 90%;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+}
+
+
+.todo__add-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    right: 2px;
+
+}
+
+.todo__add-icon:hover > svg path {
+    fill: #0296a9;
+    transition: ease 0.3s;
+}
+
+.todo__add-icon svg path {
+    fill: #00bcd4;
+}
+
+.todo__status {
+    width: 20%;
+    border: 2px solid #cccccc;
+}
+
+.todo__status select {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+    background-color: #00bcd4;
+    color: #fff;
+}
+
+.container-list {
+    display: flex;
+    margin-top: 5rem;
+    width: calc(50% + 30px);
+}
+
+.container-list ul {
+    padding: 20px 0;
+    width: 100%;
+}
+
+.container-list ul li {
+    list-style: none;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 30px 15px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.container-list ul li:hover .todo__action_icons {
+    opacity: 0.8;
+    top: 50%;
+    transition: top 0.3s ease-in;
+}
+
+.todo__action_icons {
+    display: flex;
+    position: absolute;
+    top: -25%;
+    right: 5%;
+    transition: top 0.3s ease-in;
+    gap: 10px;
+    opacity: 0.3;
+
+}
+
+
+.todo__action {
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    transform: translateY(-50%);
+    /*background-color: #00bcd461;*/
+    cursor: pointer;
+}
+
+
+.todo__action_complete {
+    background-color: #57b65abd;
+}
+
+.todo__action_complete:hover {
+    background-color: #57b65a;
+}
+
+.todo__action_complete:after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.2677 5.86962L11.0792 23.9932C10.1026 25.3356 8.51831 25.3356 7.54076 23.9932L0.732748 14.6363C-0.244249 13.2939 -0.244249 11.1165 0.732748 9.77379C1.70993 8.43086 3.29405 8.43086 4.2708 9.77328L9.3105 16.6994L20.7291 1.00682C21.7063 -0.336114 23.2905 -0.335096 24.2673 1.00682C25.2442 2.34949 25.2442 4.52619 24.2677 5.86962Z' fill='white'/%3E%3C/svg%3E");
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todo__action_restore {
+    background-color: #2196f3ba;
+}
+
+.todo__action_restore:hover {
+    background-color: #2196f3;
+}
+
+.todo__action_delete {
+    background-color: #ea6161a8;
+}
+
+.todo__action_delete:hover {
+    background-color: #ea6161;
+}
+
+.todo__action_restore:after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1301_162)'%3E%3Cpath d='M12.3487 0.00285029C12.3386 0.00285029 12.3345 0.00285029 12.3305 0.00285029C12.3224 0.00285029 12.3224 0.00285029 12.3204 0.00285029C12.3204 0.00285029 12.3204 0.00285029 12.3174 0.00285029C12.3143 0.00285029 12.3103 0.00285029 12.3063 0.00285029C12.3042 0.00285029 12.3042 0.00285029 12.3042 0.00285029C12.3042 0.00285029 12.3042 0.00285029 12.3002 0.00285029C12.2729 -0.0032086 12.2649 0.000830661 12.2447 0.000830661C9.01022 0.000830661 5.86363 1.2833 3.53803 3.53821L0.981173 0.941979C0.856966 0.820801 0.66914 0.782428 0.515648 0.847056C0.355087 0.915723 0.248047 1.06922 0.248047 1.24492V9.67486C0.248047 9.91217 0.440922 10.104 0.675199 10.104H9.00214C9.00719 10.104 9.01627 10.104 9.02233 10.104C9.25863 10.104 9.4505 9.91318 9.4505 9.67486C9.4505 9.51733 9.36466 9.37798 9.23641 9.30426L6.71087 6.74842C8.20842 5.30236 10.1624 4.51067 12.3052 4.51067C16.6777 4.53894 20.2394 8.11874 20.2394 12.5639C20.206 16.9324 16.6242 20.488 12.181 20.488L12.1911 24.9998H12.2527C19.0983 24.9998 24.7068 19.4277 24.7512 12.5023C24.7512 5.66085 19.1932 0.0604098 12.3487 0.00285029Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1301_162'%3E%3Crect width='25' height='25' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todo__action_delete:after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.9166 24.9998H18.078C19.4436 24.9998 20.5469 23.8949 20.5469 22.5309V5.21094H4.44922V22.5309C4.44922 23.8949 5.55464 24.9998 6.9166 24.9998ZM16.3554 8.34781C16.3554 7.8856 16.7286 7.50878 17.1929 7.50878C17.6551 7.50878 18.0304 7.88567 18.0304 8.34781V21.7614C18.0304 22.2257 17.6551 22.601 17.1929 22.601C16.7286 22.601 16.3554 22.2257 16.3554 21.7614V8.34781V8.34781ZM11.6865 8.34781C11.6865 7.8856 12.0603 7.50878 12.524 7.50878C12.9862 7.50878 13.3615 7.88567 13.3615 8.34781V21.7614C13.3615 22.2257 12.9862 22.601 12.524 22.601C12.0603 22.601 11.6865 22.2257 11.6865 21.7614V8.34781ZM7.02028 8.34781C7.02028 7.8856 7.39349 7.50878 7.85564 7.50878C8.31778 7.50878 8.69518 7.88567 8.69518 8.34781V21.7614C8.69518 22.2257 8.31778 22.601 7.85564 22.601C7.39343 22.601 7.02028 22.2257 7.02028 21.7614V8.34781Z' fill='white'/%3E%3Cpath d='M18.9597 1.31689H15.5611C15.4794 0.577342 14.8587 0 14.0992 0H10.9001C10.1364 0 9.51717 0.577342 9.43603 1.31689H6.03966C4.37415 1.31689 3.02893 2.66623 3.01953 4.32762H21.9809C21.9746 2.66629 20.6273 1.31689 18.9597 1.31689Z' fill='white'/%3E%3C/svg%3E");
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+[data-todo-option="active"] .todo__item:not([data-todo-state="active"]),
+[data-todo-option="completed"] .todo__item:not([data-todo-state="completed"]),
+[data-todo-option="deleted"] .todo__item:not([data-todo-state="deleted"]) {
+    display: none;
+}
+
+
+
+

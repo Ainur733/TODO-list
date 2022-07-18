@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>TODO List</title>
+</head>
+<body>
+<section class="todo">
+    <h1>TODO List</h1>
+    <div class="container-input">
+        <div class="todo__add">
+            <input type="text" placeholder="Введите задачу">
+            <div class="todo__add-icon">
+                <svg width="26" height="26" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M28.6364 0H1.36364C0.610545 0 0 0.610545 0 1.36364V28.6364C0 29.3895 0.610545 30 1.36364 30H28.6364C29.3895 30 30 29.3895 30 28.6364V1.36364C30 0.610545 29.3895 0 28.6364 0ZM23.1818 16.3636H16.3636V23.1818C16.3636 23.9349 15.7531 24.5455 15 24.5455C14.2469 24.5455 13.6364 23.9349 13.6364 23.1818V16.3636H6.81818C6.06509 16.3636 5.45455 15.7531 5.45455 15C5.45455 14.2469 6.06509 13.6364 6.81818 13.6364H13.6364V6.81818C13.6364 6.06509 14.2469 5.45455 15 5.45455C15.7531 5.45455 16.3636 6.06509 16.3636 6.81818V13.6364H23.1818C23.9349 13.6364 24.5455 14.2469 24.5455 15C24.5455 15.7531 23.9349 16.3636 23.1818 16.3636Z" fill="black"/>
+                </svg>
+            </div>
+        </div>
+        <div class="todo__status" >
+            <select>
+                <option value="active">Активные</option>
+                <option value="completed">Завершенные</option>
+                <option value="deleted">Удаленные</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="container-list">
+        <ul data-todo-option="active">
+
+        </ul>
+    </div>
+
+</section>
+<script src="app.js"></script>
+
+</body>
+</html>
